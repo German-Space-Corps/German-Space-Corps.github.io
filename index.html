@@ -1,216 +1,237 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>German Space Corps</title>
-  <style>
-    /* Reset & Basics */
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0a0a0a;
-      color: #eee;
-      line-height: 1.6;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>German Space Corps</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap');
 
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #1a1a1a;
-      border-bottom: 3px solid #cc0000;
-      display: flex;
-      justify-content: center;
-      padding: 12px 0;
-      z-index: 1000;
-    }
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    nav a {
-      color: #ff4444;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
+  body, html {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: #000000 url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+    background-size: cover;
+    color: #eee;
+  }
 
-    nav a:hover,
-    nav a.active {
-      color: #ff0000;
-      border-bottom: 2px solid #ff0000;
-      padding-bottom: 2px;
-    }
+  /* Overlay für dunklere Darstellung */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(10, 10, 10, 0.85);
+    z-index: -1;
+  }
 
-    /* Container */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 100px 20px 40px; /* extra top padding for nav */
-    }
+  header {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
 
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+  header img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
 
-    header img {
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-      margin-bottom: 20px;
-    }
+  header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+    color: #cc0000;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
 
+  header p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    color: #ddd;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    background-color: #110000cc;
+    border-bottom: 2px solid #cc0000;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  nav a {
+    display: inline-block;
+    padding: 15px 25px;
+    color: #ff4444;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover, nav a.active {
+    color: #ff0000;
+    border-bottom: 3px solid #ff0000;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
+  }
+
+  section {
+    margin-bottom: 60px;
+  }
+
+  h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #cc0000;
+    margin-bottom: 15px;
+    border-left: 5px solid #cc0000;
+    padding-left: 12px;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #ddd;
+    line-height: 1.6;
+    max-width: 700px;
+  }
+
+  a.button {
+    background-color: #cc0000;
+    color: white;
+    text-decoration: none;
+    padding: 14px 32px;
+    font-weight: 700;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+
+  a.button:hover {
+    background-color: #ff0000;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    color: #555;
+    border-top: 1px solid #330000;
+  }
+
+  footer a {
+    color: #cc0000;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
     header h1 {
       font-size: 2.8rem;
-      margin: 0;
-      color: #ff4444;
-      text-transform: uppercase;
-      letter-spacing: 3px;
+      letter-spacing: 0.15em;
     }
 
-    /* Sections */
-    section {
-      margin-bottom: 60px;
-      padding-bottom: 30px;
-      border-bottom: 1px solid #330000;
+    header p {
+      font-size: 1rem;
     }
 
-    section:last-child {
-      border: none;
-      margin-bottom: 40px;
+    a.button {
+      padding: 12px 26px;
+      font-size: 1rem;
     }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 12px;
-      color: #ff5555;
-      border-left: 5px solid #cc0000;
-      padding-left: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: #ddd;
-      max-width: 700px;
-      margin-top: 0;
-      line-height: 1.5;
-    }
-
-    /* Buttons */
-    .button {
-      display: inline-block;
-      background-color: #cc0000;
-      color: white;
-      padding: 12px 28px;
-      border-radius: 6px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      margin-top: 15px;
-      user-select: none;
-    }
-
-    .button:hover {
-      background-color: #ff0000;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      border-top: 1px solid #330000;
-      color: #666;
-      font-size: 0.9rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      nav a {
-        margin: 0 12px;
-        font-size: 1rem;
-      }
-
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .button {
-        padding: 10px 24px;
-        font-size: 1rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   <nav>
     <a href="#about" class="active">Über uns</a>
+    <a href="#units">Einheiten</a>
     <a href="#recruit">Rekrutierung</a>
-    <a href="#events">Events</a>
     <a href="#contact">Kontakt</a>
   </nav>
 
-  <main class="container">
-    <header>
-      <img src="https://via.placeholder.com/120x120.png?text=GERSC" alt="German Space Corps Logo" />
-      <h1>German Space Corps</h1>
-    </header>
+  <header>
+    <img src="https://via.placeholder.com/140x140.png?text=GERSC" alt="German Space Corps Logo" />
+    <h1>German Space Corps</h1>
+    <p>Eine neutrale Weltraumorganisation in Star Citizen, die Teamplay, Spaß und Zusammenhalt im Verse fördert.</p>
+  </header>
 
+  <main>
     <section id="about">
       <h2>Über uns</h2>
-      <p>Wir sind das German Space Corps, eine neutrale Weltraumorganisation in Star Citizen. Unser Ziel ist Teamplay, Spaß und Zusammenhalt im Verse.</p>
+      <p>Wir sind das German Space Corps, eine neutrale und freundliche Organisation im Star Citizen Universum. Unsere Mission ist es, gemeinsam das Verse zu erkunden und spannende Abenteuer zu erleben.</p>
+    </section>
+
+    <section id="units">
+      <h2>Unsere Einheiten</h2>
+      <p>Unsere Mitglieder sind in verschiedenen Einheiten organisiert, die sich auf unterschiedliche Aufgaben und Rollen spezialisiert haben. Von Kampfeinheiten bis zu Handelsflotten ist alles dabei.</p>
     </section>
 
     <section id="recruit">
       <h2>Rekrutierung</h2>
-      <p>Wir freuen uns über neue Mitglieder, die gemeinsam mit uns das Universum erkunden wollen. Bei Interesse einfach unserem Discord beitreten und melden.</p>
+      <p>Du möchtest Teil unserer Organisation werden? Wir freuen uns immer über neue Piloten und Crew-Mitglieder. Tritt einfach unserem Discord bei und lerne uns kennen.</p>
       <a href="https://discord.gg/D4khspBRxB" target="_blank" rel="noopener" class="button">Discord beitreten</a>
-    </section>
-
-    <section id="events">
-      <h2>Events</h2>
-      <p>Regelmäßig organisieren wir Flotten- und Roleplay-Events. Schau im Discord vorbei für aktuelle Termine.</p>
     </section>
 
     <section id="contact">
       <h2>Kontakt</h2>
-      <p>Bei Fragen erreichst du uns am besten über unseren Discord-Server.</p>
+      <p>Für Fragen oder Anregungen erreichst du uns am besten über unseren Discord-Server.</p>
       <a href="https://discord.gg/D4khspBRxB" target="_blank" rel="noopener" class="button">Discord öffnen</a>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 German Space Corps | <a href="https://robertsspaceindustries.com/spectrum/community/GERSC" target="_blank" rel="noopener" style="color:#ff4444;">Spectrum Community</a></p>
+    &copy; 2025 German Space Corps | <a href="https://robertsspaceindustries.com/spectrum/community/GERSC" target="_blank" rel="noopener">Spectrum Community</a>
   </footer>
 
-  <script>
-    // Aktives Menü-Highlight beim Scrollen
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a');
+<script>
+  // Scroll Spy Navigation
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
 
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 60;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
-        }
-      });
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 70;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
     });
-  </script>
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
 </body>
 </html>
