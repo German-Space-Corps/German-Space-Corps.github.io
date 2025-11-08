@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>German Space Corps</title>
+  <style>
+    /* ---------- Grundstil ---------- */
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(ellipse at center, #0a0a0f 0%, #000000 100%);
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(to bottom, #0a0a12 0%, #000000 100%);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 4px;
+      color: #66ccff;
+      text-shadow: 0 0 10px #0099ff;
+    }
+
+    header p {
+      color: #ccc;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    section {
+      padding: 4rem 10%;
+      max-width: 1000px;
+      margin: auto;
+      line-height: 1.7;
+    }
+
+    section h2 {
+      color: #66ccff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 8px #0099ff;
+    }
+
+    section p {
+      color: #ccc;
+    }
+
+    .fleet {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .ship {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .ship:hover {
+      background: rgba(102,204,255,0.1);
+      transform: translateY(-3px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 4rem;
+    }
+
+    a {
+      color: #66ccff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #0099ff;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 5px;
+      margin-top: 1rem;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #33bbff;
+      box-shadow: 0 0 10px #0099ff;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #66ccff 0%, #003366 100%);
+      margin: 1rem auto 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"></div>
+    <h1>German Space Corps</h1>
+    <p>Disziplin • Teamgeist • Entdeckung – vereint im All</p>
+  </header>
+
+  <section id="about">
+    <h2>Über uns</h2>
+    <p>
+      Das <strong>German Space Corps</strong> ist eine neutrale Star Citizen Organisation, die Entdeckung, Kooperation und Kameradschaft in den Mittelpunkt stellt. 
+      Unser Ziel ist es, gemeinsam das Verse zu erkunden, neue Horizonte zu entdecken und als Einheit zu wachsen – unabhängig von politischen Interessen.
+    </p>
+  </section>
+
+  <section id="fleet">
+    <h2>Unsere Flotte</h2>
+    <p>
+      Unsere Flotte besteht aus einer Vielzahl spezialisierter Schiffe, die für jede Mission bereitstehen – vom Erkundungsflug bis zum Großkampfeinsatz.
+    </p>
+    <div class="fleet">
+      <div class="ship">
+        <h3>RSI Constellation Andromeda</h3>
+        <p>Langstrecken-Frachter und Mehrzweckschiff für Exploration und Transport.</p>
+      </div>
+      <div class="ship">
+        <h3>Anvil Carrack</h3>
+        <p>Unser Flaggschiff für Exploration und Langzeitmissionen.</p>
+      </div>
+      <div class="ship">
+        <h3>Aegis Sabre</h3>
+        <p>Schneller, wendiger Jäger für Verteidigungs- und Eskortaufgaben.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="recruitment">
+    <h2>Rekrutierung</h2>
+    <p>
+      Wir suchen engagierte Piloten, Entdecker und Tüftler, die bereit sind, Verantwortung zu übernehmen und Teamgeist zu leben.
+      Ob Veteran oder Neuling – im German Space Corps ist jeder willkommen, der gemeinsam das Verse gestalten möchte.
+    </p>
+    <a href="https://discord.gg/D4khspBRxB" class="btn">Jetzt beitreten auf Discord</a>
+  </section>
+
+  <section id="alliances">
+    <h2>Allianzen & Partner</h2>
+    <p>
+      Wir pflegen starke Partnerschaften mit befreundeten Organisationen im Verse, um Sicherheit, Handel und Wissen zu fördern.
+      <br><em>Interesse an einer Allianz? Kontaktiere uns gerne über Discord.</em>
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Kontakt</h2>
+    <p>
+      Für Fragen, Bewerbungen oder diplomatische Anfragen erreichst du uns direkt über unseren Discord:
+      <br><a href="https://discord.gg/D4khspBRxB" target="_blank">https://discord.gg/D4khspBRxB</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2955 German Space Corps | Star Citizen Fan Organisation</p>
+  </footer>
+
+</body>
+</html>
