@@ -5,127 +5,164 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>German Space Corps</title>
   <style>
+    /* Reset & Basics */
+    * {
+      box-sizing: border-box;
+    }
     body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #0a0a0a;
       color: #eee;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0 20px;
       line-height: 1.6;
     }
 
-    header, footer {
-      background-color: #1a1a1a;
-      padding: 15px 20px;
-      border-bottom: 3px solid #cc0000;
-      color: #ff3333;
-      text-align: center;
-    }
-
-    header img {
-      width: 100px;
-      height: 100px;
-      object-fit: contain;
-      margin-bottom: 10px;
-    }
-
-    h1, h2, h3 {
-      color: #ff4444;
-      margin-top: 0;
-    }
-
-    a {
-      color: #ff5555;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    a:hover {
-      color: #ff0000;
-      text-decoration: underline;
-    }
-
-    button, .button {
-      background-color: #cc0000;
-      border: none;
-      color: white;
-      padding: 10px 18px;
-      cursor: pointer;
-      border-radius: 4px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-      display: inline-block;
-      margin-top: 10px;
-      text-align: center;
-    }
-
-    button:hover, .button:hover {
-      background-color: #ff0000;
-    }
-
-    section {
-      padding: 20px 0;
-      border-bottom: 1px solid #330000;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: auto;
-    }
-
-    .highlight-box {
-      background-color: #1a0000;
-      box-shadow: 0 0 10px #cc0000;
-      padding: 15px;
-      border-radius: 6px;
-      margin-bottom: 20px;
-    }
-
+    /* Navigation */
     nav {
-      margin: 15px 0;
-      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #1a1a1a;
+      border-bottom: 3px solid #cc0000;
+      display: flex;
+      justify-content: center;
+      padding: 12px 0;
+      z-index: 1000;
     }
 
     nav a {
-      margin: 0 15px;
+      color: #ff4444;
+      text-decoration: none;
+      margin: 0 20px;
       font-weight: 700;
       font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #ff0000;
+      border-bottom: 2px solid #ff0000;
+      padding-bottom: 2px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 100px 20px 40px; /* extra top padding for nav */
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      color: #ff4444;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 60px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #330000;
+    }
+
+    section:last-child {
+      border: none;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: #ff5555;
+      border-left: 5px solid #cc0000;
+      padding-left: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #ddd;
+      max-width: 700px;
+      margin-top: 0;
+      line-height: 1.5;
+    }
+
+    /* Buttons */
+    .button {
+      display: inline-block;
+      background-color: #cc0000;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 15px;
+      user-select: none;
+    }
+
+    .button:hover {
+      background-color: #ff0000;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #330000;
+      color: #666;
+      font-size: 0.9rem;
     }
 
     /* Responsive */
     @media (max-width: 600px) {
-      body {
-        padding: 10px;
-      }
-
-      header img {
-        width: 80px;
-        height: 80px;
-      }
-
       nav a {
-        display: block;
-        margin: 8px 0;
+        margin: 0 12px;
+        font-size: 1rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .button {
+        padding: 10px 24px;
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <!-- Logo Platzhalter -->
-    <img src="https://via.placeholder.com/100x100.png?text=GERSC" alt="German Space Corps Logo" />
-    <h1>German Space Corps</h1>
-    <nav>
-      <a href="#about">Über uns</a>
-      <a href="#recruit">Rekrutierung</a>
-      <a href="#events">Events</a>
-      <a href="#contact">Kontakt</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="#about" class="active">Über uns</a>
+    <a href="#recruit">Rekrutierung</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
 
   <main class="container">
+    <header>
+      <img src="https://via.placeholder.com/120x120.png?text=GERSC" alt="German Space Corps Logo" />
+      <h1>German Space Corps</h1>
+    </header>
+
     <section id="about">
       <h2>Über uns</h2>
       <p>Wir sind das German Space Corps, eine neutrale Weltraumorganisation in Star Citizen. Unser Ziel ist Teamplay, Spaß und Zusammenhalt im Verse.</p>
@@ -150,7 +187,30 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 German Space Corps | <a href="https://robertsspaceindustries.com/spectrum/community/GERSC" target="_blank" rel="noopener">Spectrum Community</a></p>
+    <p>&copy; 2025 German Space Corps | <a href="https://robertsspaceindustries.com/spectrum/community/GERSC" target="_blank" rel="noopener" style="color:#ff4444;">Spectrum Community</a></p>
   </footer>
+
+  <script>
+    // Aktives Menü-Highlight beim Scrollen
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 60;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
