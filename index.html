@@ -1,235 +1,157 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>German Space Corps</title>
+<meta name="description" content="German Space Corps — neutrale Star Citizen Organisation. Tritt unserem Discord bei: https://discord.gg/D4khspBRxB" />
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap');
-
-  /* Reset */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  * { box-sizing: border-box; }
+  html,body { height:100%; margin:0; }
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Roboto:wght@300;400;700&display=swap');
+  body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: radial-gradient(ellipse at center, #050405 0%, #000000 60%);
+    color: #e9e9e9; line-height:1.5;
   }
-
-  body, html {
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    background: #000000 url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-    background-size: cover;
-    color: #eee;
+  .stars {
+    position:fixed; inset:0; z-index:-2;
+    background-image:
+      radial-gradient(#222 1px, transparent 1px),
+      radial-gradient(#222 1px, transparent 1px);
+    background-size: 200px 200px, 100px 100px;
+    background-position: 0 0, 50px 50px;
+    opacity:0.06; animation: twinkle 12s linear infinite;
+    pointer-events:none;
   }
-
-  /* Overlay für dunklere Darstellung */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(10, 10, 10, 0.85);
-    z-index: -1;
-  }
-
-  header {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-  }
-
-  header img {
-    width: 140px;
-    height: 140px;
-    object-fit: contain;
-    margin-bottom: 20px;
-  }
-
-  header h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 4rem;
-    color: #cc0000;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-
-  header p {
-    font-size: 1.3rem;
-    max-width: 600px;
-    color: #ddd;
-  }
-
+  @keyframes twinkle { 0%{opacity:0.05}50%{opacity:0.12}100%{opacity:0.05} }
   nav {
-    position: sticky;
-    top: 0;
-    background-color: #110000cc;
-    border-bottom: 2px solid #cc0000;
-    display: flex;
-    justify-content: center;
-    z-index: 1000;
+    position:sticky; top:0; z-index:50;
+    backdrop-filter: blur(4px);
+    background: linear-gradient(180deg, rgba(10,0,0,0.35), rgba(5,0,0,0.25));
+    border-bottom: 2px solid #330000;
+    display:flex; justify-content:center; padding:10px 0;
   }
-
+  nav .nav-inner { max-width:980px; width:100%; display:flex; gap:18px; justify-content:center; align-items:center; padding:0 12px; }
   nav a {
-    display: inline-block;
-    padding: 15px 25px;
-    color: #ff4444;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    transition: color 0.3s ease;
+    color:#ff6666; text-decoration:none; font-weight:700; letter-spacing:0.04em;
+    padding:8px 12px; border-radius:6px; font-size:0.98rem;
   }
-
-  nav a:hover, nav a.active {
-    color: #ff0000;
-    border-bottom: 3px solid #ff0000;
+  nav a.active, nav a:hover {
+    color:#ff0000; background: rgba(255,0,0,0.04);
+    box-shadow:0 2px 10px rgba(255,0,0,0.04) inset;
   }
-
-  main {
-    max-width: 900px;
-    margin: 40px auto 80px;
-    padding: 0 20px;
+  .wrap { max-width:980px; margin:0 auto; padding:22px; }
+  header {
+    display:flex; flex-direction:column; align-items:center; text-align:center;
+    padding:36px 16px 28px;
   }
-
-  section {
-    margin-bottom: 60px;
+  .logo-wrap { width:160px; height:160px; display:block; margin-bottom:18px; }
+  .site-title { font-family:'Orbitron',sans-serif; color:#ff4444; font-size:2.6rem; letter-spacing:0.18em; margin:6px 0 0; text-transform:uppercase; }
+  .site-tag { color:#d6d6d6; margin-top:8px; font-size:1rem; max-width:720px; }
+  main { padding-bottom:40px; }
+  section { padding:28px 12px; border-bottom:1px solid rgba(255,0,0,0.06); margin:0 auto; max-width:880px; }
+  h2 { font-family:'Orbitron',sans-serif; color:#ff3333; font-size:1.6rem; margin:0 0 10px; letter-spacing:0.06em; text-transform:uppercase; }
+  p { color:#dcdcdc; margin:0 0 10px; font-size:1rem; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:14px; }
+  .card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08));
+    border:1px solid rgba(255,0,0,0.06);
+    padding:14px; border-radius:10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
   }
-
-  h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    color: #cc0000;
-    margin-bottom: 15px;
-    border-left: 5px solid #cc0000;
-    padding-left: 12px;
-    text-transform: uppercase;
-  }
-
-  p {
-    font-size: 1.1rem;
-    color: #ddd;
-    line-height: 1.6;
-    max-width: 700px;
-  }
-
-  a.button {
-    background-color: #cc0000;
-    color: white;
-    text-decoration: none;
-    padding: 14px 32px;
-    font-weight: 700;
-    border-radius: 6px;
-    display: inline-block;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-    user-select: none;
-  }
-
-  a.button:hover {
-    background-color: #ff0000;
-  }
-
-  footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 0.85rem;
-    color: #555;
-    border-top: 1px solid #330000;
-  }
-
-  footer a {
-    color: #cc0000;
-    text-decoration: none;
-  }
-
-  footer a:hover {
-    text-decoration: underline;
-  }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 2.8rem;
-      letter-spacing: 0.15em;
-    }
-
-    header p {
-      font-size: 1rem;
-    }
-
-    a.button {
-      padding: 12px 26px;
-      font-size: 1rem;
-    }
+  .card h3 { margin:0 0 6px; color:#ff5555; font-size:1.05rem; }
+  .card p { margin:0; color:#cfcfcf; font-size:0.95rem; }
+  .cta { display:inline-block; background:#cc0000; color:#fff; padding:12px 26px; border-radius:8px; text-decoration:none; font-weight:700; margin-top:8px; }
+  .cta:hover { background:#ff0000; }
+  footer { text-align:center; color:#777; padding:22px 12px; border-top:1px solid rgba(255,0,0,0.04); font-size:0.9rem; }
+  footer a { color:#cc0000; text-decoration:none; }
+  footer a:hover { text-decoration:underline; }
+  @media (max-width:640px){
+    .site-title { font-size:1.9rem; letter-spacing:0.12em; }
+    .logo-wrap { width:120px; height:120px; }
+    nav .nav-inner { gap:10px; }
+    section { padding:20px 10px; }
   }
 </style>
 </head>
 <body>
-  <nav>
-    <a href="#about" class="active">Über uns</a>
-    <a href="#units">Einheiten</a>
-    <a href="#recruit">Rekrutierung</a>
-    <a href="#contact">Kontakt</a>
+  <div class="stars" aria-hidden="true"></div>
+  <nav role="navigation" aria-label="Hauptnavigation">
+    <div class="nav-inner">
+      <a href="#about" class="navlink active">Über uns</a>
+      <a href="#units" class="navlink">Einheiten</a>
+      <a href="#recruit" class="navlink">Rekrutierung</a>
+      <a href="#contact" class="navlink">Kontakt</a>
+    </div>
   </nav>
-
-  <header>
-    <img src="https://github.com/German-Space-Corps/German-Space-Corps.github.io/blob/main/logo.png" />
-    <h1>German Space Corps</h1>
-    <p>Eine neutrale Weltraumorganisation in Star Citizen, die Teamplay, Spaß und Zusammenhalt im Verse fördert.</p>
-  </header>
-
-  <main>
-    <section id="about">
-      <h2>Über uns</h2>
-      <p>Wir sind das German Space Corps, eine neutrale und freundliche Organisation im Star Citizen Universum. Unsere Mission ist es, gemeinsam das Verse zu erkunden und spannende Abenteuer zu erleben.</p>
-    </section>
-
-    <section id="units">
-      <h2>Unsere Einheiten</h2>
-      <p>Unsere Mitglieder sind in verschiedenen Einheiten organisiert, die sich auf unterschiedliche Aufgaben und Rollen spezialisiert haben. Von Kampfeinheiten bis zu Handelsflotten ist alles dabei.</p>
-    </section>
-
-    <section id="recruit">
-      <h2>Rekrutierung</h2>
-      <p>Du möchtest Teil unserer Organisation werden? Wir freuen uns immer über neue Piloten und Crew-Mitglieder. Tritt einfach unserem Discord bei und lerne uns kennen.</p>
-      <a href="https://discord.gg/D4khspBRxB" target="_blank" rel="noopener" class="button">Discord beitreten</a>
-    </section>
-
-    <section id="contact">
-      <h2>Kontakt</h2>
-      <p>Für Fragen oder Anregungen erreichst du uns am besten über unseren Discord-Server.</p>
-      <a href="https://discord.gg/D4khspBRxB" target="_blank" rel="noopener" class="button">Discord öffnen</a>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 German Space Corps | <a href="https://robertsspaceindustries.com/spectrum/community/GERSC" target="_blank" rel="noopener">Spectrum Community</a>
-  </footer>
-
+  <div class="wrap">
+    <header>
+      <!-- Nutzung deines hochgeladenen Logos -->
+      <div class="logo-wrap">
+        <img src="logo.png" alt="German Space Corps Logo" style="width:100%; height:auto; display:block;" />
+      </div>
+      <div class="site-title">German Space Corps</div>
+      <div class="site-tag">Disziplin • Teamgeist • Entdeckung — vereint im All</div>
+    </header>
+    <main>
+      <section id="about">
+        <h2>Über uns</h2>
+        <p>Das <strong>German Space Corps</strong> (GERSC) ist eine neutrale Star Citizen Organisation — wir fördern Teamplay, gemeinsame Erkundung und kameradschaftliche Events im Verse.</p>
+      </section>
+      <section id="units">
+        <h2>Unsere Einheiten</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Erkundung & Forschung</h3>
+            <p>Langstrecken-Scouts und Forschungsteams (Carrack, Constellation).</p>
+          </div>
+          <div class="card">
+            <h3>Handel & Logistik</h3>
+            <p>Transport, Bergbau und Handel – Versorgung unserer Flotten.</p>
+          </div>
+          <div class="card">
+            <h3>Gefechtskräfte</h3>
+            <p>Sicherheits- und Eskort-Einheiten mit Jägern (Hornet, Sabre).</p>
+          </div>
+        </div>
+      </section>
+      <section id="recruit">
+        <h2>Rekrutierung</h2>
+        <p>Neue Mitglieder sind willkommen — Anfänger wie Veteranen. Tritt unserem Discord bei für Bewerbung, Fragen und nächste Events.</p>
+        <a class="cta" href="https://discord.gg/D4khspBRxB" target="_blank" rel="noopener">Discord beitreten</a>
+      </section>
+      <section id="contact">
+        <h2>Kontakt</h2>
+        <p>Am schnellsten erreichst du uns über unseren Discord-Server oder über unser Spectrum-Profil.</p>
+        <p><a href="https://robertsspaceindustries.com/spectrum/community/GERSC" style="color:#ff6666; text-decoration:none;">Spectrum: GERSC</a></p>
+      </section>
+    </main>
+    <footer>
+      <small>&copy; 2955 German Space Corps — Fan-Organisation | Designed for GitHub Pages</small>
+    </footer>
+  </div>
 <script>
-  // Scroll Spy Navigation
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav a');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
+  const navLinks = document.querySelectorAll('nav a.navlink');
+  const sections = document.querySelectorAll('main section');
+  function onScrollSpy(){
+    let current = sections[0].id;
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 70;
-      if (pageYOffset >= sectionTop) {
-        current = section.getAttribute('id');
-      }
+      const top = section.getBoundingClientRect().top;
+      if(top <= 120) current = section.id;
     });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === '#' + current) {
-        link.classList.add('active');
-      }
+    navLinks.forEach(a=>{
+      a.classList.toggle('active', a.getAttribute('href') === '#'+current);
+    });
+  }
+  window.addEventListener('scroll', onScrollSpy);
+  window.addEventListener('load', onScrollSpy);
+  document.querySelectorAll('nav a').forEach(a=>{
+    a.addEventListener('click', e=>{
+      e.preventDefault();
+      const tgt = document.querySelector(a.getAttribute('href'));
+      if(!tgt) return;
+      window.scrollTo({ top: tgt.offsetTop - 70, behavior:'smooth' });
     });
   });
 </script>
