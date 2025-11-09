@@ -1,36 +1,100 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>German Space Corps</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>German Space Corps</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ==== Linke Seitenleiste ==== -->
+  <div class="sidebar">
+    <a href="https://discord.gg/D4khspBRxB" target="_blank" class="sidebar-btn">Discord</a>
+    <a href="https://robertsspaceindustries.com/spectrum/community/GERSC" target="_blank" class="sidebar-btn">Spectrum</a>
+  </div>
 
-  <body>
-    <div id="background"></div>
+  <!-- ==== Navigationsleiste ==== -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">Über uns</a></li>
+      <li><a href="#units">Units</a></li>
+      <li><a href="#join">Beitritt</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
 
-    <div id="main">
-      <img src="logo.png" alt="German Space Corps Logo" id="logo" />
-      <h1>German Space Corps</h1>
-      <p class="tagline">Disziplin • Teamgeist • Entdeckung</p>
-      <a href="https://discord.gg/D4khspBRxB" target="_blank" class="button">Discord beitreten</a>
+  <!-- ==== Hero Bereich ==== -->
+  <section id="home" class="section hero">
+    <img src="logo.png" alt="German Space Corps Logo" class="logo">
+    <h1>German Space Corps</h1>
+    <p class="tagline">Disziplin • Teamgeist • Entdeckung</p>
+  </section>
+
+  <!-- ==== Über uns ==== -->
+  <section id="about" class="section">
+    <h2>Über uns</h2>
+    <p>
+      Das <strong>German Space Corps</strong> ist eine neutrale, deutschsprachige Organisation in Star Citizen.  
+      Unser Fokus liegt auf Teamarbeit, Disziplin und gemeinsamer Erkundung des Verse.  
+      Ob Kampf, Handel oder Forschung – bei uns zählt die Crew.
+    </p>
+  </section>
+
+  <!-- ==== Units ==== -->
+  <section id="units" class="section">
+    <h2>Unsere Units</h2>
+    <div class="units-grid">
+      <div class="unit-card">
+        <h3>Exploration</h3>
+        <p>Entdecke neue Systeme, erforsche unbekannte Welten und erweitere das Wissen des Corps.</p>
+      </div>
+      <div class="unit-card">
+        <h3>Combat</h3>
+        <p>Schütze unsere Mitglieder, begleite Missionen und halte den Raum sicher.</p>
+      </div>
+      <div class="unit-card">
+        <h3>Logistics</h3>
+        <p>Verwalte Ressourcen, Transporte und Versorgung unserer Flotte.</p>
+      </div>
+      <div class="unit-card">
+        <h3>Support</h3>
+        <p>Hilf neuen Piloten, plane Events und unterstütze die Organisation im Hintergrund.</p>
+      </div>
     </div>
+  </section>
 
-    <footer>
-      <p>
-        &copy; 2955 German Space Corps |
-        <a href="https://robertsspaceindustries.com/spectrum/community/GERSC" target="_blank" rel="noopener">
-          Spectrum Community
-        </a>
-      </p>
-    </footer>
+  <!-- ==== Join ==== -->
+  <section id="join" class="section">
+    <h2>Beitritt</h2>
+    <p>
+      Werde Teil des German Space Corps!  
+      Bewirb dich auf unserer RSI-Seite oder tritt unserem Discord bei, um mehr zu erfahren.
+    </p>
+    <a href="https://discord.gg/D4khspBRxB" target="_blank" class="button">Jetzt beitreten</a>
+  </section>
 
-    <script>
-      // Optional: sanftes Fade-In für das Logo und den Text
-      window.addEventListener("load", () => {
-        document.getElementById("main").classList.add("visible");
+  <!-- ==== Kontakt ==== -->
+  <section id="contact" class="section">
+    <h2>Kontakt</h2>
+    <p>Besuche uns auf Spectrum oder komm direkt auf unseren Discord.</p>
+  </section>
+
+  <!-- ==== Footer ==== -->
+  <footer>
+    <p>&copy; 2955 German Space Corps • All rights reserved</p>
+  </footer>
+
+  <script>
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>
