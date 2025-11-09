@@ -4,97 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>German Space Corps</title>
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
-  <!-- ==== Linke Seitenleiste ==== -->
+
+  <!-- Seitenhintergrund -->
+  <div class="background"></div>
+
+  <!-- Sidebar -->
   <div class="sidebar">
-    <a href="https://discord.gg/D4khspBRxB" target="_blank" class="sidebar-btn">discord-dutton.png</a>
-    <a href="https://robertsspaceindustries.com/spectrum/community/GERSC" target="_blank" class="sidebar-btn">Spectrum</a>
+    <a href="https://discord.gg/D4khspBRxB" target="_blank" class="sidebar-icon">
+      <img src="discord.png" alt="Discord">
+    </a>
+    <a href="https://robertsspaceindustries.com/spectrum/community/GERSC" target="_blank" class="sidebar-icon">
+      <img src="spectrum.png" alt="Spectrum">
+    </a>
   </div>
 
-  <!-- ==== Navigationsleiste ==== -->
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="German Space Corps Logo" class="logo">
+    <h1>German Space Corps</h1>
+    <p class="motto">Ehre – Pflicht – Zusammenhalt im All</p>
+  </header>
+
+  <!-- Navigation -->
   <nav>
     <ul>
-      <li><a href="#home">Home</a></li>
       <li><a href="#about">Über uns</a></li>
-      <li><a href="#units">Units</a></li>
-      <li><a href="#join">Beitritt</a></li>
+      <li><a href="#units">Abteilungen</a></li>
+      <li><a href="#join">Beitreten</a></li>
       <li><a href="#contact">Kontakt</a></li>
     </ul>
   </nav>
 
-  <!-- ==== Hero Bereich ==== -->
-  <section id="home" class="section hero">
-    <img src="logo.png" alt="German Space Corps Logo" class="logo">
-    <h1>German Space Corps</h1>
-    <p class="tagline">Disziplin • Teamgeist • Entdeckung</p>
-  </section>
+  <!-- Hauptinhalt -->
+  <main>
+    <section id="about">
+      <h2>Über uns</h2>
+      <p>
+        Das <strong>German Space Corps (GERSC)</strong> ist eine neutrale Star Citizen Organisation, 
+        die für Kameradschaft, Teamgeist und Verantwortung steht. 
+        Ob Pilot, Ingenieur oder Forscher – bei uns findet jeder seinen Platz.
+      </p>
+    </section>
 
-  <!-- ==== Über uns ==== -->
-  <section id="about" class="section">
-    <h2>Über uns</h2>
-    <p>
-      Das <strong>German Space Corps</strong> ist eine neutrale, deutschsprachige Organisation in Star Citizen.  
-      Unser Fokus liegt auf Teamarbeit, Disziplin und gemeinsamer Erkundung des Verse.  
-      Ob Kampf, Handel oder Forschung – bei uns zählt die Crew.
-    </p>
-  </section>
+    <section id="units">
+      <h2>Abteilungen</h2>
+      <ul>
+        <li>⚙️ Technik & Logistik</li>
+        <li>🛰️ Exploration & Forschung</li>
+        <li>🚀 Kampf & Sicherheit</li>
+        <li>💬 Diplomatie & Handel</li>
+      </ul>
+    </section>
 
-  <!-- ==== Units ==== -->
-  <section id="units" class="section">
-    <h2>Unsere Units</h2>
-    <div class="units-grid">
-      <div class="unit-card">
-        <h3>Exploration</h3>
-        <p>Entdecke neue Systeme, erforsche unbekannte Welten und erweitere das Wissen des Corps.</p>
-      </div>
-      <div class="unit-card">
-        <h3>Combat</h3>
-        <p>Schütze unsere Mitglieder, begleite Missionen und halte den Raum sicher.</p>
-      </div>
-      <div class="unit-card">
-        <h3>Logistics</h3>
-        <p>Verwalte Ressourcen, Transporte und Versorgung unserer Flotte.</p>
-      </div>
-      <div class="unit-card">
-        <h3>Support</h3>
-        <p>Hilf neuen Piloten, plane Events und unterstütze die Organisation im Hintergrund.</p>
-      </div>
-    </div>
-  </section>
+    <section id="join">
+      <h2>Beitreten</h2>
+      <p>
+        Du möchtest Teil des <strong>German Space Corps</strong> werden?  
+        Tritt unserem <a href="https://discord.gg/D4khspBRxB" target="_blank">Discord</a> bei 
+        und stelle dich der Crew vor!
+      </p>
+    </section>
 
-  <!-- ==== Join ==== -->
-  <section id="join" class="section">
-    <h2>Beitritt</h2>
-    <p>
-      Werde Teil des German Space Corps!  
-      Bewirb dich auf unserer RSI-Seite oder tritt unserem Discord bei, um mehr zu erfahren.
-    </p>
-    <a href="https://discord.gg/D4khspBRxB" target="_blank" class="button">Jetzt beitreten</a>
-  </section>
+    <section id="contact">
+      <h2>Kontakt</h2>
+      <p>
+        Fragen oder Anregungen?  
+        Schreibe uns direkt über <a href="https://discord.gg/D4khspBRxB" target="_blank">Discord</a> 
+        oder auf <a href="https://robertsspaceindustries.com/spectrum/community/GERSC" target="_blank">Spectrum</a>.
+      </p>
+    </section>
+  </main>
 
-  <!-- ==== Kontakt ==== -->
-  <section id="contact" class="section">
-    <h2>Kontakt</h2>
-    <p>Besuche uns auf Spectrum oder komm direkt auf unseren Discord.</p>
-  </section>
-
-  <!-- ==== Footer ==== -->
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2955 German Space Corps • All rights reserved</p>
+    <p>© 2955 German Space Corps – All Rights Reserved</p>
   </footer>
 
-  <script>
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
 </body>
 </html>
