@@ -1,0 +1,102 @@
+/* === Grund / Fonts === */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+:root{
+  --bg:#050405;
+  --panel: rgba(0,0,0,0.55);
+  --accent: #cc0000;   /* dein Rot (wie auf alter Seite) */
+  --accent-strong: #ff1a1a;
+  --muted: #bfbfbf;
+  --glass: rgba(255,255,255,0.03);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:#eee;font-family:Roboto,Arial,Helvetica,sans-serif;}
+
+/* Sidebar buttons */
+.sidebar{
+  position:fixed;left:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;z-index:1200;pointer-events:none;
+}
+.sidebar .sb-btn{pointer-events:auto;display:block;width:52px;height:52px;border-radius:12px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.15));box-shadow:0 6px 20px rgba(0,0,0,0.6);}
+.sidebar img{width:100%;height:100%;object-fit:cover;filter:drop-shadow(0 0 8px rgba(204,0,0,0.35));transition:transform .25s,filter .25s;}
+.sidebar img:hover{transform:scale(1.08);filter:drop-shadow(0 0 20px rgba(255,26,26,0.9));}
+
+/* Header / Nav */
+.site-header{position:sticky;top:0;z-index:1000;background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.15));backdrop-filter:blur(4px);border-bottom:1px solid rgba(255,0,0,0.06);}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 22px;max-width:1180px;margin:0 auto;}
+.logo{height:60px;width:auto;display:block;filter:drop-shadow(0 6px 30px rgba(204,0,0,0.25));}
+.menu-toggle{background:none;border:0;padding:8px;display:inline-flex;flex-direction:column;gap:6px;cursor:pointer;}
+.menu-toggle span{display:block;width:28px;height:3px;background:#ddd;border-radius:3px;}
+
+/* Nav links */
+.main-nav{display:flex;justify-content:center;padding:10px 0;}
+.main-nav ul{list-style:none;display:flex;gap:26px;margin:0;padding:0;}
+.main-nav a{color:#fff;text-decoration:none;font-weight:700;letter-spacing:0.06em;padding:8px 10px;transition:color .2s,text-shadow .2s;}
+.main-nav a:hover{color:var(--accent-strong);text-shadow:0 0 8px rgba(255,26,26,0.6);}
+
+/* Responsive nav (open class for mobile) */
+.main-nav.open{display:block}
+@media (max-width:860px){
+  .main-nav{display:none}
+  .main-nav.open{display:block;background:rgba(0,0,0,0.6);position:absolute;left:0;right:0;padding:10px 20px}
+  .main-nav ul{flex-direction:column;gap:12px}
+}
+
+/* HERO */
+.hero{position:relative;height:60vh;min-height:420px;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#fff;}
+.hero::before{content:'';position:absolute;inset:0;background-image:url('space-bg.jpg');background-size:cover;background-position:center;transform:translateZ(0) scale(1.06);filter:brightness(.45) contrast(1.05);z-index:0;transition:transform 1s ease;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.65));z-index:1;}
+.hero-inner{position:relative;z-index:2;text-align:center;padding:0 20px;max-width:1100px;}
+.hero h1{font-family:Orbitron, sans-serif;font-size:3rem;margin-bottom:10px;color:var(--accent);}
+.hero .lead{color:var(--muted);margin-bottom:18px;font-size:1.05rem;}
+.cta{display:inline-block;background:var(--accent);color:#111;padding:12px 22px;border-radius:8px;font-weight:700;text-decoration:none;box-shadow:0 8px 30px rgba(204,0,0,0.18);transition:transform .18s,box-shadow .18s}
+.cta:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(255,26,26,0.28)}
+
+/* Content container */
+.content{max-width:1180px;margin:42px auto;padding:0 20px}
+
+/* Section */
+.section{padding:28px 0}
+.section .container{max-width:1100px;margin:0 auto}
+.section-title{font-family:Orbitron, sans-serif;color:var(--accent);font-size:1.6rem;margin-bottom:6px}
+.section-sub{color:var(--muted);margin-bottom:18px}
+
+/* SHIP GRID and cards */
+.ship-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px;margin-top:18px}
+.card{background:var(--panel);border-radius:12px;overflow:hidden;border:1px solid rgba(255,0,0,0.06);box-shadow:0 10px 30px rgba(0,0,0,0.5);transform:translateY(0);transition:transform .35s cubic-bezier(.16,.86,.34,1),box-shadow .35s}
+.card:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(204,0,0,0.12)}
+.card .card-media img{width:100%;height:220px;object-fit:cover;display:block}
+.card-body{padding:16px 18px}
+.card-body h3{font-family:'Black Ops One', 'Orbitron', sans-serif;color:var(--accent-strong);margin:0 0 8px;font-size:1.3rem}
+.muted{color:var(--muted);font-size:0.95rem;margin-bottom:8px}
+.desc{color:#e6e6e6;font-size:0.98rem}
+.card-actions{margin-top:12px;display:flex;gap:10px}
+.btn-outline{padding:8px 12px;border-radius:8px;border:1px solid var(--accent);color:var(--accent);text-decoration:none;font-weight:700}
+.btn-outline:hover{background:var(--accent-strong);color:#111}
+.btn-primary{padding:8px 12px;border-radius:8px;background:var(--accent);color:#111;text-decoration:none;font-weight:700}
+.btn-primary:hover{filter:brightness(1.03)}
+
+/* Filters (small) */
+.filters{display:flex;gap:12px;justify-content:center;margin-top:8px}
+.filter-btn{background:var(--glass);border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:8px 12px;border-radius:8px;cursor:pointer}
+.filter-btn.active{background:linear-gradient(180deg, rgba(255,0,0,0.06), rgba(255,0,0,0.02));color:var(--accent-strong);border-color:var(--accent)}
+
+/* Fade-up animation */
+.fade-up{opacity:0;transform:translateY(18px);transition:all .8s cubic-bezier(.2,.9,.2,1)}
+.fade-up.in-view{opacity:1;transform:none}
+
+/* Back to top */
+.back-top{position:fixed;right:20px;bottom:20px;background:var(--panel);border:1px solid rgba(255,0,0,0.06);color:#fff;padding:10px 12px;border-radius:8px;display:none;z-index:1100}
+.back-top.visible{display:block}
+
+/* Footer */
+.site-footer{padding:28px 0;background:linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.2));border-top:1px solid rgba(255,0,0,0.04);text-align:center;color:#9b9b9b}
+
+/* Responsive tweaks */
+@media (max-width:860px){
+  .hero h1{font-size:2rem}
+  .logo{height:52px}
+  .hero{height:48vh}
+  .sidebar{left:12px}
+  .card .card-media img{height:160px}
+}
