@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unsere Schiffe – GERSC</title>
+
+  <link rel="stylesheet" href="style.css?v=12" />
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+<div id="preloader"><div class="loader"></div></div>
+
+<!-- NAVIGATION -->
+<header class="navbar">
+  <div class="navbar-container">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="GERSC Logo" class="logo-glow" />
+    </a>
+    <button class="menu-toggle" id="menuToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="menu" id="menu">
+    <a class="nav-btn" href="index.html">Home</a>
+    <a class="nav-btn" href="about.html">Über Uns</a>
+    <a class="nav-btn" href="ships.html">Schiffe</a>
+    <a class="nav-btn" href="units.html">Einheiten</a>
+    <a class="nav-btn" href="discord.html">Discord</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="background: linear-gradient(to bottom, #000000cc, #000000f2),
+ url('BG.jpg') no-repeat center center fixed; background-size: cover;">
+  <div class="hero-content">
+    <h1>Unsere Schiffe</h1>
+    <p>Die Flotte des German Space Corps</p>
+    <div class="scroll-down">▼</div>
+  </div>
+</section>
+
+<main>
+
+<section class="fade-in" id="ships">
+  <h2>Die Flotte</h2>
+  <p>Eine Übersicht der wichtigsten Schiffe, die unsere Organisation im Einsatz hat.</p>
+
+  <div class="ship-grid">
+
+    <!-- CUTLASS -->
+    <div class="ship-card">
+      <img src="ships/cutlass.jpg" alt="Drake Cutlass Black">
+      <div class="ship-info">
+        <h3>Cutlass Black</h3>
+        <p><strong>Hersteller:</strong> Drake Interplanetary</p>
+        <p><strong>Rolle:</strong> Allround / Combat Utility</p>
+        <p><strong>Crew:</strong> 1–2 Personen</p>
+        <a href="https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Black" target="_blank" class="ship-btn">RSI Seite</a>
+      </div>
+    </div>
+
+    <!-- F7C HORNET -->
+    <div class="ship-card">
+      <img src="ships/hornet.jpg" alt="F7C Hornet">
+      <div class="ship-info">
+        <h3>F7C Hornet</h3>
+        <p><strong>Hersteller:</strong> Anvil Aerospace</p>
+        <p><strong>Rolle:</strong> Fighter / Combat</p>
+        <p><strong>Crew:</strong> 1 Person</p>
+        <a href="https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7C-Hornet" target="_blank" class="ship-btn">RSI Seite</a>
+      </div>
+    </div>
+
+    <!-- CONSTELLATION AQUILA -->
+    <div class="ship-card">
+      <img src="ships/aquila.jpg" alt="Constellation Aquila">
+      <div class="ship-info">
+        <h3>Constellation Aquila</h3>
+        <p><strong>Hersteller:</strong> RSI – Roberts Space Industries</p>
+        <p><strong>Rolle:</strong> Exploration / Multicrew</p>
+        <p><strong>Crew:</strong> 3–4 Personen</p>
+        <a href="https://robertsspaceindustries.com/pledge/ships/rsi-constellation/Constellation-Aquila" target="_blank" class="ship-btn">RSI Seite</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 German-Space-Corps</p>
+</footer>
+
+<button id="backToTop" title="Nach oben">▲</button>
+
+<script>
+// Menü
+document.getElementById('menuToggle').addEventListener('click', () => {
+  document.getElementById('menu').classList.toggle('open');
+});
+
+// Scroll Navbar
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('.navbar');
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Preloader
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  preloader.style.opacity = '0';
+  preloader.style.pointerEvents = 'none';
+  setTimeout(() => preloader.remove(), 500);
+});
+
+// Back to Top
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>
