@@ -1,131 +1,178 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unsere Schiffe – GERSC</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GERSC — Flotte</title>
 
-  <link rel="stylesheet" href="style.css?v=13" />
-  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="ships.css?v=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<div id="preloader"><div class="loader"></div></div>
-
-<!-- NAVIGATION -->
-<header class="navbar">
-  <div class="navbar-container">
-    <a href="index.html" class="logo">
-      <img src="logo.png" alt="GERSC Logo" class="logo-glow" />
+  <!-- Sidebar buttons (Discord / Spectrum) -->
+  <div class="sidebar">
+    <a class="sb-btn" href="https://discord.gg/D4khspBRxB" target="_blank" title="Discord">
+      <img src="discord.png" alt="Discord">
     </a>
-    <button class="menu-toggle" id="menuToggle">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <nav class="menu" id="menu">
-    <a class="nav-btn" href="index.html">Home</a>
-    <a class="nav-btn" href="about.html">Über Uns</a>
-    <a class="nav-btn" href="ships.html">Schiffe</a>
-    <a class="nav-btn" href="units.html">Einheiten</a>
-    <a class="nav-btn" href="discord.html">Discord</a>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section class="hero" style="background: linear-gradient(to bottom, #000000cc, #000000f2),
- url('BG.jpg') no-repeat center center fixed; background-size: cover;">
-  <div class="hero-content">
-    <h1>Unsere Schiffe</h1>
-    <p>Die Flotte des German Space Corps</p>
-    <div class="scroll-down">▼</div>
-  </div>
-</section>
-
-<main>
-
-<section class="fade-in" id="ships">
-  <h2>Die Flotte</h2>
-  <p>Eine Übersicht der wichtigsten Schiffe, die unsere Organisation im Einsatz hat.</p>
-
-  <div class="ship-grid">
-
-    <!-- CUTLASS -->
-    <div class="ship-card">
-      <img src="logos/Cutlass_Black.jpg" alt="Drake Cutlass Black">
-      <div class="ship-info">
-        <h3>Cutlass Black</h3>
-        <p><strong>Hersteller:</strong> Drake Interplanetary</p>
-        <p><strong>Rolle:</strong> Allround / Combat Utility</p>
-        <p><strong>Crew:</strong> 1–2 Personen</p>
-        <a href="https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Black" target="_blank" class="ship-btn">RSI Seite</a>
-      </div>
-    </div>
-
-    <!-- F7C HORNET -->
-    <div class="ship-card">
-      <img src="ships/hornet.jpg" alt="F7C Hornet">
-      <div class="ship-info">
-        <h3>F7C Hornet</h3>
-        <p><strong>Hersteller:</strong> Anvil Aerospace</p>
-        <p><strong>Rolle:</strong> Fighter / Combat</p>
-        <p><strong>Crew:</strong> 1 Person</p>
-        <a href="https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7C-Hornet" target="_blank" class="ship-btn">RSI Seite</a>
-      </div>
-    </div>
-
-    <!-- CONSTELLATION AQUILA -->
-    <div class="ship-card">
-      <img src="ships/aquila.jpg" alt="Constellation Aquila">
-      <div class="ship-info">
-        <h3>Constellation Aquila</h3>
-        <p><strong>Hersteller:</strong> RSI – Roberts Space Industries</p>
-        <p><strong>Rolle:</strong> Exploration / Multicrew</p>
-        <p><strong>Crew:</strong> 3–4 Personen</p>
-        <a href="https://robertsspaceindustries.com/pledge/ships/rsi-constellation/Constellation-Aquila" target="_blank" class="ship-btn">RSI Seite</a>
-      </div>
-    </div>
-
+    <a class="sb-btn" href="https://robertsspaceindustries.com/spectrum/community/GERSC" target="_blank" title="Spectrum">
+      <img src="spectrum.png" alt="Spectrum">
+    </a>
   </div>
 
-</section>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="home-link" href="index.html" aria-label="Home">
+        <img src="logo.png" alt="GERSC Logo" class="logo">
+      </a>
 
-</main>
+      <button id="menuToggle" class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
 
-<footer>
-  <p>&copy; 2025 German-Space-Corps</p>
-</footer>
+    <nav id="mainNav" class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">Über uns</a></li>
+        <li class="active"><a href="ships.html">Flotte</a></li>
+        <li><a href="index.html#join">Beitritt</a></li>
+        <li><a href="index.html#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<button id="backToTop" title="Nach oben">▲</button>
+  <!-- HERO with Parallax -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <h1>Flotte des German Space Corps</h1>
+      <p class="lead">Cutlass • Hornet F7C • Constellation Aquila — zuverlässig, vielseitig, kampfstark.</p>
+      <a class="cta" href="#fleet">Flotte ansehen</a>
+    </div>
+  </section>
+
+  <main class="content">
+
+    <!-- Fleet summary -->
+    <section id="fleet" class="section fade-up">
+      <div class="container">
+        <h2 class="section-title">Unsere Schiffe</h2>
+        <p class="section-sub">Kurzbeschreibungen, Rollen und Links zu den offiziellen RSI-Seiten.</p>
+
+        <div class="grid ship-grid">
+
+          <!-- CUTLASS -->
+          <article class="card ship-card">
+            <div class="card-media">
+              <img src="ships/cutlass.jpg" alt="Cutlass Black">
+            </div>
+            <div class="card-body">
+              <h3>Drake Cutlass Black</h3>
+              <p class="muted">Hersteller: Drake Interplanetary</p>
+              <p class="desc">Vielseitiges Arbeitspferd — Transport, Boarding, Sicherheit. Robust und modular.</p>
+              <div class="card-actions">
+                <a class="btn-outline" href="https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Black" target="_blank">Mehr bei RSI</a>
+                <a class="btn-primary" href="cutlass.html">Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- HORNET -->
+          <article class="card ship-card">
+            <div class="card-media">
+              <img src="ships/hornet.jpg" alt="Anvil F7C Hornet">
+            </div>
+            <div class="card-body">
+              <h3>Anvil F7C Hornet</h3>
+              <p class="muted">Hersteller: Anvil Aerospace</p>
+              <p class="desc">Wendiger Kampfjäger, ideal für Eskort- und Durchsetzungsaufgaben.</p>
+              <div class="card-actions">
+                <a class="btn-outline" href="https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7C-Hornet" target="_blank">Mehr bei RSI</a>
+                <a class="btn-primary" href="hornet.html">Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- AQUILA -->
+          <article class="card ship-card">
+            <div class="card-media">
+              <img src="ships/aquila.jpg" alt="RSI Constellation Aquila">
+            </div>
+            <div class="card-body">
+              <h3>RSI Constellation Aquila</h3>
+              <p class="muted">Hersteller: RSI</p>
+              <p class="desc">Hexaklasse für Exploration — Multicrew, Forschung und Langstreckenaufklärung.</p>
+              <div class="card-actions">
+                <a class="btn-outline" href="https://robertsspaceindustries.com/pledge/ships/rsi-constellation/Constellation-Aquila" target="_blank">Mehr bei RSI</a>
+                <a class="btn-primary" href="aquila.html">Details</a>
+              </div>
+            </div>
+          </article>
+
+        </div> <!-- .ship-grid -->
+      </div>
+    </section>
+
+    <!-- Optional: Fleet filters (animated) -->
+    <section class="section fade-up small" aria-hidden="true">
+      <div class="container">
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">Alle</button>
+          <button class="filter-btn" data-filter="combat">Kampf</button>
+          <button class="filter-btn" data-filter="explore">Exploration</button>
+          <button class="filter-btn" data-filter="transport">Transport</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2955 German Space Corps • Fan-Organisation</p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="backToTop" class="back-top" title="Nach oben">▲</button>
 
 <script>
-// Menü
-document.getElementById('menuToggle').addEventListener('click', () => {
-  document.getElementById('menu').classList.toggle('open');
-});
+  // Menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+  menuToggle?.addEventListener('click', () => mainNav.classList.toggle('open'));
 
-// Scroll Navbar
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('.navbar');
-  nav.classList.toggle('scrolled', window.scrollY > 50);
-});
+  // Back to top
+  const back = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => back.classList.toggle('visible', window.scrollY > 300));
+  back.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
 
-// Preloader
-window.addEventListener('load', () => {
-  const preloader = document.getElementById('preloader');
-  preloader.style.opacity = '0';
-  preloader.style.pointerEvents = 'none';
-  setTimeout(() => preloader.remove(), 500);
-});
+  // Simple filter (client-side)
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      const cards = document.querySelectorAll('.ship-card');
+      cards.forEach(card=>{
+        if(f==='all'){ card.style.display=''; return; }
+        // minimal: assume classes, you can add classes to cards like 'combat explore transport'
+        if(card.classList.contains(f)) card.style.display=''; else card.style.display='none';
+      });
+    });
+  });
 
-// Back to Top
-const backToTop = document.getElementById('backToTop');
-window.addEventListener('scroll', () => {
-  backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-});
-backToTop.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+  // IntersectionObserver for fade-up
+  const fades = document.querySelectorAll('.fade-up');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) e.target.classList.add('in-view');
+    });
+  }, {threshold: 0.12});
+  fades.forEach(f=>io.observe(f));
 </script>
 
 </body>
